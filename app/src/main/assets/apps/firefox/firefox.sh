@@ -53,6 +53,12 @@ if [ ! -f /support/gdk_fix ]; then
   touch /support/gdk_fix
 fi
 
+if [ ! -f /support/full_screen_fix ]; then
+  sed -i 's/<\/applications>/<application class="*"> <position force="yes"> <x>0<\/x> <y>0<\/y> <\/position> <size> <width>100%<\/width> <height>100%<\/height> <\/size> <\/application> <\/applications>/g' /etc/xdg/openbox/rc.xml
+  openbox --reconfigure
+  touch /support/full_screen_fix
+fi
+
 if [ -f /Intents/url.txt ]; then
   url=`cat /Intents/url.txt`
   rm /Intents/url.txt

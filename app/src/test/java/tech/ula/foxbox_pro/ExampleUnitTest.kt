@@ -1,4 +1,4 @@
-package tech.ula.foxbox
+package tech.ula.foxbox_pro
 
 import org.junit.Test
 
