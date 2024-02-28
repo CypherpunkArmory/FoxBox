@@ -1,4 +1,4 @@
-package tech.ula.foxbox_pro
+package tech.ula.andacity
 
 import android.content.Intent
 import android.net.Uri
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
 
     fun processIntent(intent: Intent) {
         val ulaIntent = Intent(this, tech.ula.library.MainActivity::class.java)
-        val app = App("firefox","browser", "debian", false, true, "false",false, 1)
+        val app = App("audacity","sound", "debian", false, true, "false",false, 1)
         ulaIntent.putExtra("app", app)
         if (intent.data != null) {
             val emulatedScopedDir = getExternalFilesDir(null)!!

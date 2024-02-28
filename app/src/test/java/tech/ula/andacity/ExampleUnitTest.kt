@@ -1,4 +1,4 @@
-package tech.ula.foxbox_pro
+package tech.ula.andacity
 
 import org.junit.Test
 

@@ -16,7 +16,7 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
 
-        buildConfigField "String", "REPO_NAME", "\"FoxBox\""
+        buildConfigField "String", "REPO_NAME", "\"Andacity\""
 
         buildConfigField 'String', 'VERSION_CODE', '\"' + rootProject.ext.appVersionCode + '\"'
         buildConfigField 'String', 'VERSION_NAME', '\"' + rootProject.ext.appVersionName + '\"'
@@ -56,8 +56,8 @@ android {
         buildConfigField 'boolean', 'DEFAULT_CUSTOM_FILESYSTEM_ENABLED', 'false'
         resValue "string", "default_custom_filesystem_enabled", "false"
         //this is the default custom filesystem url
-        buildConfigField "String", "DEFAULT_FILESYSTEM_URL", "\"https://github.com/CypherpunkArmory/UserLAnd-Assets-Debian/releases/download/v7.7.9\""
-        resValue "string", "default_filesystem_url", "\"https://github.com/CypherpunkArmory/UserLAnd-Assets-Debian/releases/download/v7.7.9\""
+        buildConfigField "String", "DEFAULT_FILESYSTEM_URL", "\"https://github.com/CypherpunkArmory/UserLAnd-Assets-Debian/releases/download/v7.8.11\""
+        resValue "string", "default_filesystem_url", "\"https://github.com/CypherpunkArmory/UserLAnd-Assets-Debian/releases/download/v7.8.11\""
         //this can be used the hide the toolbar within bVNC
         buildConfigField 'boolean', 'DEFAULT_HIDE_VNC_TOOLBAR', 'false'
         resValue "string", "default_hide_vnc_toolbar", "false"
@@ -106,14 +106,14 @@ android {
         buildConfigField 'boolean', 'CHECK_FILESYSTEM_MD5', 'false'
 
         //this is the default github release for filesystems to use if not overwritten by a custom url
-        buildConfigField 'String', 'DEFAULT_RELEASE', "\"tags/v7.7.9\""
+        buildConfigField 'String', 'DEFAULT_RELEASE', "\"tags/v7.8.11\""
 
         //this controls if we use the DownloadManager
         buildConfigField 'boolean', 'USE_DOWNLOAD_MANAGER', 'true'
 
         //these control what permissions we ask for
         buildConfigField 'boolean', 'USES_CAMERA', 'false'
-        buildConfigField 'boolean', 'USES_MICROPHONE', 'false'
+        buildConfigField 'boolean', 'USES_MICROPHONE', 'true'
 
         //this controls if we support firing Android intents from the Linux side
         buildConfigField 'boolean', 'POLL_FOR_INTENTS', 'false'
@@ -122,7 +122,7 @@ android {
         buildConfigField 'boolean', 'HAS_A10_PROOT', 'true'
 
         //Need unique provider authorities
-        buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"tech.ula.foxbox_pro.provider.fileprovider\""
+        buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"tech.ula.andacity.provider.fileprovider\""
     }
 
     buildTypes {
