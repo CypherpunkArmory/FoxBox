@@ -4,12 +4,13 @@ plugins {
 }
 
 android {
-    compileSdkVersion 33
-    buildToolsVersion "33.0.0"
+    namespace 'tech.ula.customlibrary'
+
+    compileSdkVersion 35
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 33
+        targetSdkVersion 35
         versionCode 1
         versionName "1.0"
 
@@ -124,6 +125,7 @@ android {
         //Need unique provider authorities
         buildConfigField 'String', 'PROVIDER_AUTHORITY', "\"tech.ula.foxbox_pro.provider.fileprovider\""
     }
+    buildFeatures.buildConfig true
 
     buildTypes {
         release {
@@ -132,11 +134,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 }
 

@@ -4,13 +4,14 @@ plugins {
 }
 
 android {
-    compileSdkVersion 31
-    buildToolsVersion "33.0.0"
+    namespace 'tech.ula.foxbox_pro'
+
+    compileSdkVersion 35
 
     defaultConfig {
         applicationId "tech.ula.foxbox_pro"
         minSdkVersion 21
-        targetSdkVersion 31
+        targetSdkVersion 35
 
         versionCode rootProject.ext.appVersionCode
         versionName rootProject.ext.appVersionName
@@ -22,7 +23,8 @@ android {
         debug {
             debuggable true
             minifyEnabled false
-            testCoverageEnabled true
+            enableUnitTestCoverage false
+            enableAndroidTestCoverage false
         }
         release {
             debuggable false
@@ -31,11 +33,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = '17'
     }
 
     bundle {
@@ -55,9 +57,10 @@ android {
     }
 
     packagingOptions {
-        exclude 'lib/armeabi/libsqlcipher.so'
-        exclude 'lib/mips64/libsqlcipher.so'
-        exclude 'lib/mips/libsqlcipher.so'
+        jniLibs {
+            useLegacyPackaging true
+            excludes += ['lib/armeabi/libsqlcipher.so', 'lib/mips64/libsqlcipher.so', 'lib/mips/libsqlcipher.so']
+        }
     }
 }
 
@@ -68,7 +71,6 @@ dependencies {
     implementation 'com.google.android.material:material:1.4.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation project(':UserLAndLibrary')
 }
